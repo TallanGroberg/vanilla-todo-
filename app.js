@@ -35,6 +35,8 @@ axios.get('https://api.vschool.io/tallan/todo/')
       
       
       img.src = content[i].imgUrl
+
+    
       aTag.href = img.src
       
       imgInput.type = 'text'
@@ -56,7 +58,6 @@ axios.get('https://api.vschool.io/tallan/todo/')
       edit.textContent = 'edit'
       del.textContent = 'delete'
       const theId = content[i]._id
-
 
       
       appen(document.body, container)
@@ -112,10 +113,6 @@ axios.get('https://api.vschool.io/tallan/todo/')
           autoRefresh()
           });
 
-
-
-
-
       del.addEventListener('click', function() {
         axios.delete(`https://api.vschool.io/tallan/todo/${theId}`)
         function autoRefresh() {
@@ -133,7 +130,10 @@ form.addEventListener('submit', function(e)  {
   let d = document.form.description.value 
   let t = document.form.title.value
   let imge = document.form.image.value
-
+  let defaultImg = 'https://d1yn1kh78jj1rr.cloudfront.net/image/preview/HZBWoNyubj6cad3ah/storyblocks-cute-dinosaurs-toy-icon-over-white-background-vector-illustration_HnzQQzLjAZ_SB_PM.jpg'
+  if (imge === '') {
+    axios.post('https://api.vschool.io/tallan/todo/', {imgUrl: defaultImg})
+  }
   axios.post('https://api.vschool.io/tallan/todo/', {title: t, description: d, imgUrl: imge})
   .catch(err => console.log(err))
   function autoRefresh() {

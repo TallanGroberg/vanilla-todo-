@@ -5,15 +5,17 @@ background: -webkit-linear-gradient(45deg, #FFFFFF 0%, #DBDBDB 100%);
 background: linear-gradient(45deg, #FFFFFF 0%, #DBDBDB 100%);
   display: flex;
   flex-wrap: wrap;
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(2, auto);
+  /* display: grid; */
+  /* grid-gap: 20px; */
+  /* display: grid; */
 }
 * {
-  font-style: inherit
+  font-style: inherit;
 }
 .form {
-  grid-column: 1 / -1;
+  width: 100%;
+  /* grid-template-columns: repeat(4, 400px); */
+  /* grid-column: 1 / -1; */
   position: relative;
   margin: auto;
 }
@@ -69,28 +71,23 @@ button:active {
 div {
   text-align: center;
   box-shadow: 14px 17px 9px 5px rgba(0,0,0,0.75);
-
-  width: 400%;
-  width: 90%;
+  width: 300px;
   margin: 1%;
-  left: 0;
-  right: 0;
-  /* max-width: 22em; */
-  /* position: relative; */
-  box-sizing: border-box;
-
   color: #FFF;
   background: #000;
   background-clip: padding-box; 
   border: 14px double #000000;
-  border-radius: 40px 40px 0px 40px;
+  border-radius: 80px 80px 0px 80px;
 }
 
 @media only screen and (max-width: 700px) {
 
-  .container {
+  body {
     
     grid-template-columns: 1fr;
+    /* margin: auto;
+    left: 0;
+    right: 0; */
   }
 }
 
